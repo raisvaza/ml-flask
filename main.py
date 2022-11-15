@@ -24,7 +24,8 @@ def hello_world():
 @app.route('/result/<result>')
 def success(result):
   app.logger.info('testing info log')
-  return f'The result is: {result}'
+  str_result = "Benign" if float(result) == 1.0 else "Malignant"
+  return f'The result is: {str_result}'
  
  
 @app.route('/predict', methods=['POST'])
